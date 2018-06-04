@@ -1,28 +1,23 @@
-<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-  {{ with .Site.Params.nav.logo }}
-  <div class="navbar-brand">
-    <a class="navbar-item" href="{{ .link }}">
-        <img src="{{ .src }}" alt="{{ .alt }}">
-    </a>
-  </div>
-  {{ end }}
-
-  <div class="navbar-menu">
-    <div class="navbar-start">
-        <a class="navbar-item" href="/">
-          Home
-      </a>
-
-      {{ range sort .Site.Sections "Params.weight" "asc" }}
-      <a class="navbar-item" href="{{ .URL }}">
-        {{ title .Dir | strings.TrimSuffix "/" }}
-      </a>
-      {{ end }} 
+<header class="Site-header">
+  <nav role="navigation" class="Navigation">
+    <div class="Navigation-left">
     </div>
-
-    <div class="navbar-end">
-
+    <div class="Navigation-middle">
+      <header class="Page-header">
+        <nav class="DocsNav">
+          <a class="DocsNav-tab" href="/">
+            Home
+          </a>
+  
+          {{ range sort .Site.Sections "Params.weight" "asc" }}
+          <a class="DocsNav-tab" href="{{ .URL }}">
+            {{ replace .Dir "_" " " | title | strings.TrimSuffix "/" }}
+          </a>
+          {{ end }} 
+        </nav>
+      </header>
     </div>
-
-  </div>
-</nav>
+    <div class="Navigation-right">
+    </div>
+  </nav>
+</header>

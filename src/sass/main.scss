@@ -1,6 +1,16 @@
 @import '~bulma/bulma';
 @import './spacing.scss';
 
+html {
+  font: 16px/27px Segment Circular Std,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #425e78;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .page, body {
   display: flex;
 }
@@ -9,6 +19,69 @@ body {
   flex-direction: column;
   min-width: 100%;
   min-height: 100%;
+}
+
+.Site-header {
+  display: block;
+}
+
+.Navigation, .Navigation-left {
+  display: flex;
+  align-items: center;
+}
+
+.Navigation {
+  box-sizing: border-box;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 2rem 0 1rem;
+  font-size: 16px;
+  border-bottom: 1px solid #e4edf5;
+}
+
+.Navigation-left {
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.Navigation-middle {
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.Navigation-right {
+  -ms-flex-align: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.Navigation-item, .Navigation-right {
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.DocsNav {
+  position: relative;
+  text-align: left;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.DocsNav-tab {
+  display: inline-block;
+  font-size: 16px;
+  transition: all .3s;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+.DocsNav-tab+.DocsNav-tab {
+  margin-left: 2rem;
 }
 
 .page, .page-body {
