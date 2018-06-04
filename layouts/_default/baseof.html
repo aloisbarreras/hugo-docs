@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ with .Site.Params.title }} | {{ . }}{{ end }}{{ end }}</title>
+  {{ block "favicon" . }}{{ partial "site-favicon.html" . }}{{ end }}
+  {{ block "site-styles" .}}{{ partial "site-styles" . }}{{ end }}
+</head>
+
+<body>
+
+  {{ block "site-header" . }}{{ partial "site-header.html" . }}{{ end }}
+
+  <div class="page">
+
+    <div class="page-body">
+      <div class="page-main p-t-lg p-l-xl p-r-xl p-b-lg">
+        {{ block "main" . }}
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="page-sidebar">
+      <aside class="menu">
+        <ul class="menu-list">
+          {{ if ne .Kind "home" }} 
+            {{ with .Site.GetPage "section" .Section }}
+              <li><a href="{{ .URL }}">{{ cond (eq (len .Title) 0) "empty" .Title }}</a></li>
+            {{ end}}
+          {{ end }}
+          {{ range where .Site.Pages "Section" .Section }}
+            {{ if and (ne .Kind "home") (ne .Kind "section") }}
+              <li><a href="{{ .URL }}">{{ cond (eq (len .Title) 0) "empty" .Title }}</a></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </aside>
+    </div>
+
+  </div>
+
+  {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
+  {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+</body>
+
+</html>

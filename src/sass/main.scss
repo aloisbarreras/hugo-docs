@@ -1,0 +1,72 @@
+@import '~bulma/bulma';
+@import './spacing.scss';
+
+.page, body {
+  display: flex;
+}
+
+body {
+  flex-direction: column;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.page, .page-body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.page {
+  flex: 1 1 0;
+  align-items: stretch;
+  flex-direction: row-reverse;
+}
+
+.page-body {
+  flex: 1;
+}
+
+.page-sidebar {
+  width: 270px;
+  padding: 2rem;
+  padding-bottom: 0;
+  background: #fafbfc;
+  border-right: 1px solid #e4edf5;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.page-main {
+  max-width: 960px;
+  padding: 4rem 4rem 8rem 96px;
+}
+
+h1 {
+  @extend .title;
+  @extend .is-1;
+}
+
+h2 {
+  @extend .title;
+  @extend .is-2;
+}
+
+h3 {
+  @extend .title;
+  @extend .is-3;
+}
+
+h4 {
+  @extend .title;
+  @extend .is-4;
+}
+
+h5 {
+  @extend .title;
+  @extend .is-5;
+}
+
+h6 {
+  @extend .title;
+  @extend .is-6;
+}
