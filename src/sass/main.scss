@@ -13,7 +13,7 @@ body {
 
 .page, .page-body {
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .page {
@@ -39,34 +39,4 @@ body {
 .page-main {
   max-width: 960px;
   padding: 4rem 4rem 8rem 96px;
-}
-
-h1 {
-  @extend .title;
-  @extend .is-1;
-}
-
-h2 {
-  @extend .title;
-  @extend .is-2;
-}
-
-h3 {
-  @extend .title;
-  @extend .is-3;
-}
-
-h4 {
-  @extend .title;
-  @extend .is-4;
-}
-
-h5 {
-  @extend .title;
-  @extend .is-5;
-}
-
-h6 {
-  @extend .title;
-  @extend .is-6;
 }

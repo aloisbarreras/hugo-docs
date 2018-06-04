@@ -6,6 +6,7 @@
   <title>{{ block "title" . }}{{ .Site.Title }}{{ with .Site.Params.title }} | {{ . }}{{ end }}{{ end }}</title>
   {{ block "favicon" . }}{{ partial "site-favicon.html" . }}{{ end }}
   {{ block "site-styles" .}}{{ partial "site-styles" . }}{{ end }}
+  {{ partial "custom-styles" . }}
 </head>
 
 <body>
