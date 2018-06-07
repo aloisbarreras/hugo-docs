@@ -1,0 +1,17 @@
+title: "My Docs Site"
+baseURL: "https://example.com"
+languageCode: "en-us"
+theme: hugo-docs
+themesDir: "../.."
+
+menu:
+  main:
+  - name: Home
+    url: /
+    weight: 100
+  - name: Getting Started
+    url: /
+    weight: 200
+  - name: Guides
+    url: /
+    weight: 300
